@@ -1,2 +1,7 @@
-# WebPageRenumberer
-A simple program to take hard numbered lists in a web page and renumber them.
+# Web Page Renumberer
+
+## About
+
+This program is used to take in HTML and an element that has indexed number out of order. It will then renumber them.
+
+

@@ -1,0 +1,20 @@
+{
+  "name": "WebPageRenumberer",
+  "frontend:build": "mask build",
+  "frontend:install": "",
+  "frontend:dev": "",
+  "wailsjsdir": "./frontend/src",
+  "version": "2",
+  "Path": "",
+  "BuildDir": "build",
+  "outputfilename": "WebPageRenumberer",
+  "OutputType": "",
+  "Platform": "",
+  "Author": {
+    "name": "Richard Guay",
+    "email": "raguay@customct.com"
+  },
+  "debounceMS": 100,
+  "devserverurl": "http://localhost:34115",
+  "appargs": ""
+}
