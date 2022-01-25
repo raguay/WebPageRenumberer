@@ -201,21 +201,18 @@
   })
 
   function processText() {
-    var count = 1;
+    var count = 0;
     matches.forEach(term => {
       if(parseInt(term[1]) === 1) count = 1;
-      var orig = `<${elementType}>${term[1]}.${term[2]}</${elementType}>`;
-      var nline = `<${elementType}>${count}.${term[2]}</${elementType}>`;
+      inputText = inputText.replace(`<${elementType}>${term[1]}.${term[2]}</${elementType}>`,`<${elementType}>${count}.${term[2]}</${elementType}>`);
       count += 1;
-      inputText = inputText.replace(orig,nline);
     });
     showRows();
   }
 
   function showRows() {
-    var indexStr = `<${elementType}>(\\d+)\\.(.*)</${elementType}>`;
-    var regexpIndex = new RegExp(indexStr,'igm');
-    matches = [...inputText.matchAll(regexpIndex)];
+    inputText = inputText.replaceAll(new RegExp(`\\n</${elementType}>`,'igm'),`</${elementType}>`)
+    matches = [...inputText.matchAll(new RegExp(`<${elementType}>(\\d+)\\.(.*)</${elementType}>`,'ig'))];
     if(matches.length > 0) numbersFound = true;
   }
 
