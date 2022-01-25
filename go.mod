@@ -1,4 +1,4 @@
-module changeme
+module webpagerenumberer
 
 go 1.17
 

@@ -1,4 +1,10 @@
 <div
+  id="dragbar"
+  data-wails-drag
+>
+</div>
+
+<div
   id="main"
 >
   <h1>Web Page Renumberer</h1>
@@ -72,7 +78,12 @@
 <style>
   :global(body) {
     background: #2A212C; 
-    overflow: hidden;
+    margin: 8px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
   }
 
@@ -86,6 +97,13 @@
     width: 100%;
     height: 100%;
   }
+
+  #dragbar {
+    width: 100%;
+    height: 20px;
+    margin: 0px;
+    padding: 0px;
+  }
   
   #content {
     display: flex;
@@ -93,7 +111,6 @@
     margin: 20px;
     overflow-x: hidden;
     overflow-y: auto;
-    user-select: none;
     height: 750px;
     user-select: none;
   }
@@ -137,7 +154,6 @@
     padding: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
-    resize: none;
   }
 
   textarea {
@@ -151,12 +167,22 @@
     color: #80FFEA;
     background-color: #9F70A9;
     border-radius: 5px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
   }
 
   h1 {
     text-align: center;
     margin: 20px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
   }
 </style>
