@@ -60,7 +60,7 @@
           <th></th>
           <tbody>
             {#each matches as match}
-              <tr><td>{match[1]}.</td><td>{match[2]}</td></tr>
+              <tr><td>{match[1]}{match[2]}.</td><td>{match[3]}</td></tr>
             {/each}
           </tbody>
         </table>
@@ -206,8 +206,8 @@
   function processText() {
     var count = 0;
     matches.forEach(term => {
-      if(parseInt(term[1]) === 1) count = 1;
-      inputText = inputText.replace(`<${elementType}>${term[1]}.${term[2]}</${elementType}>`,`<${elementType}>${count}.${term[2]}</${elementType}>`);
+      if(parseInt(term[2]) === 1) count = 1;
+      inputText = inputText.replace(`<${elementType}>${term[1]}${term[2]}.${term[3]}</${elementType}>`,`<${elementType}>${term[1]}${count}.${term[3]}</${elementType}>`);
       count += 1;
     });
     showRows();
@@ -224,7 +224,7 @@
     //
     // Find the matches.
     //
-    matches = [...inputText.matchAll(new RegExp(`<${elementType}>(\\d+)\\.(.*)</${elementType}>`,'ig'))];
+    matches = [...inputText.matchAll(new RegExp(`<${elementType}>(.*)(\\d+)\\.(.*)</${elementType}>`,'ig'))];
     if(matches.length > 0) numbersFound = true;
   }
 
