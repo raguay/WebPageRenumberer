@@ -213,7 +213,15 @@
   }
 
   function showRows() {
+    //
+    // Make sure the number heading is on it's own line.
+    //
+    inputText = inputText.replaceAll(new RegExp(`<${elementType}>`,'igm'), `\n<${elementType}>`);
     inputText = inputText.replaceAll(new RegExp(`\\n</${elementType}>`,'igm'),`</${elementType}>`)
+
+    //
+    // Find the matches.
+    //
     matches = [...inputText.matchAll(new RegExp(`<${elementType}>(\\d+)\\.(.*)</${elementType}>`,'ig'))];
     if(matches.length > 0) numbersFound = true;
   }
