@@ -85,6 +85,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    overflow: hidden;
   }
 
   #main {
@@ -132,7 +133,7 @@
   }
 
   #tableDiv {
-    height: 300px;
+    height: 230px;
     width: 100%;
     overflow: auto;
     user-select: none;
@@ -154,6 +155,7 @@
     padding: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
+    outline: none;
   }
 
   textarea {
