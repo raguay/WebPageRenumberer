@@ -77,8 +77,9 @@
 
 <style>
   :global(body) {
+    margin: 0px;
+    padding: 0px;
     background: #2A212C; 
-    margin: 8px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -101,7 +102,7 @@
 
   #dragbar {
     width: 100%;
-    height: 20px;
+    height: 30px;
     margin: 0px;
     padding: 0px;
   }
