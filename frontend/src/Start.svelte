@@ -60,7 +60,12 @@
           <th></th>
           <tbody>
             {#each matches as match}
-              <tr><td>{match[1]}{match[2]}.</td><td>{match[3]}</td></tr>
+              <tr><td>
+                  {#if typeof match[1] !== 'undefined'}
+                    {match[1]}
+                  {/if}
+                  </td><td>{match[2]}.</td><td>{match[3]}</td>
+              </tr>
             {/each}
           </tbody>
         </table>
@@ -207,6 +212,7 @@
     var count = 0;
     matches.forEach(term => {
       if(parseInt(term[2]) === 1) count = 1;
+      if(typeof term[1] === 'undefined') term[1] = '';
       inputText = inputText.replace(`<${elementType}>${term[1]}${term[2]}.${term[3]}</${elementType}>`,`<${elementType}>${term[1]}${count}.${term[3]}</${elementType}>`);
       count += 1;
     });
@@ -224,7 +230,8 @@
     //
     // Find the matches.
     //
-    matches = [...inputText.matchAll(new RegExp(`<${elementType}>(.*)(\\d+)\\.(.*)</${elementType}>`,'ig'))];
+    matches = [...inputText.matchAll(new RegExp(`<${elementType}>(<*[^0-9]*)(\\d+)\\.(.*)</${elementType}>`,'ig'))];
+    console.log(matches);
     if(matches.length > 0) numbersFound = true;
   }
 
