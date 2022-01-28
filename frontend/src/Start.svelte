@@ -197,12 +197,30 @@
 
 <script>
   import { onMount } from "svelte";
+  import tidy from "./modules/tidy.js";
 
   var inputText = "";
   var elementType = "h3";
   var output = null;
   var numbersFound = false;
   var matches;
+  var options = {
+    "indent":"auto",
+    "indent-spaces":2,
+    "wrap":0,
+    "markup":true,
+    "output-xml":false,
+    "numeric-entities":true,
+    "quote-marks":true,
+    "quote-nbsp":false,
+    "show-body-only": true,
+    "quote-ampersand":false,
+    "break-before-br":true,
+    "uppercase-tags":false,
+    "uppercase-attributes":false,
+    "drop-font-tags": false,
+    "tidy-mark":false
+  };
 
   onMount(() => {
 
@@ -217,6 +235,10 @@
       count += 1;
     });
     showRows();
+    //
+    // Clean up the outputed HTML.
+    //
+    inputText = tidy(inputText, options);
   }
 
   function showRows() {
