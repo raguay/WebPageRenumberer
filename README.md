@@ -8,7 +8,7 @@ This program is used to take in HTML and an element that has indexed number out 
 
 You have to have [Node](https://nodejs.org/en/), npm, [go](https://go.dev/), and [Wails 2](https://wails.io/) installed first.
 
-Go into the `fronend` directory and run `npm install`. Then go back to the root directory and run `wails build`. You executable will be in the `build` directory.
+Go into the `frontend` directory and run `npm install`. Then go back to the root directory and run `wails build`. You executable will be in the `build` directory.
 
 ## How to Use
 
